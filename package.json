@@ -1,0 +1,11 @@
+{
+    "name": "random-number-api",
+    "private": true,
+    "scripts": {
+        "start": "node server2.js"
+    },
+    "dependencies": {
+        "express": "^5.3.0",
+        "mongodb": "^7.8.0"
+    }
+}

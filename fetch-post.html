@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Fetch post example</title>
+    </head>
+
+    <body>
+        <p>Add a new product to the <code>products</code></p>
+
+        <script>
+            //set url to your server and route
+            fetch('https://localhose:3000/collection/products', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json', //sets data type as JSON
+                },
+                body: JSON.stringify(newProduct), //stingify JSON object
+            })
+                .then(response=> response.json())
+                .then(responseJSON => {
+                    document.getElementById('response').innerText = JSON.stringify(response);
+                })
+                .catch((error) => {
+                    document.getElementById('error').innerText = error;
+                })
+        </script>
+    </body>
+</html>
